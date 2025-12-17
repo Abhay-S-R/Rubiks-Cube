@@ -1,16 +1,87 @@
-# React + Vite
+# Rubik's Cube Shop 🧩
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce web application for selling high-performance puzzles. Built with React.js and Vite, featuring a complete shopping experience from product browsing to checkout.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Dynamic Storefront**: Browse specialized puzzles (2x2, 3x3, 4x4) with real-time price filtering.
+- **Cart Management**: Add/remove items, adjust quantities, and view delivery cost estimates.
+- **Seamless Checkout**:
+  - Integrated delivery options (Standard vs. Express).
+  - Dynamic order summary calculation.
+  - Multi-step checkout flow (Cart -> Checkout -> Payment -> Success).
+- **Backend Integration**: Custom Express server to handle order processing and data persistence (in-memory).
+- **Responsive Design**: Fully optimized for mobile, tablet, and desktop screens.
+- **Modern UI/UX**: Glassmorphism effects, smooth transitions, and toast notifications.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Frontend**: React 19, Vite, React Router v7
+- **Styling**: CSS3 (Variables, Flexbox/Grid, Responsive Media Queries)
+- **Icons**: Lucide React
+- **Backend**: Node.js, Express.js (for API handling)
+- **State Management**: React Context API
 
-## Expanding the ESLint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Follow these instructions to get the project up and running on your local machine.
+
+### Prerequisites
+
+- npm (Node Package Manager)
+- Node.js (v16 or higher)
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/Abhay-S-R/Rubiks-Cube.git
+   cd Rubiks-Cube
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the Backend Server**
+   This handles API requests for orders.
+
+   ```bash
+   node server.js
+   ```
+
+   _Server runs on http://localhost:5000_
+
+4. **Start the Frontend Application**
+   Open a new terminal terminal and run:
+   ```bash
+   npm run dev
+   ```
+   _Frontend typically runs on http://localhost:5173_
+
+## 📁 Project Structure
+
+```bash
+rubiks-cube/
+├── server.js               
+├── src/
+│   ├── components/         
+│   ├── context/            
+│   ├── data/               
+│   ├── pages/              
+│   ├── services/           
+│   ├── utils/              
+│   └── App.jsx             
+└── ...
+```
+
+## 🛡️ API Endpoints
+
+| Method | Endpoint      | Description         |
+| :----- | :------------ | :------------------ |
+| GET    | `/api/orders` | Retrieve all orders |
+| POST   | `/api/orders` | Create a new order  |
+| GET    | `/`           | Health check        |
