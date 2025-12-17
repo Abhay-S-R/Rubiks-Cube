@@ -1,0 +1,123 @@
+:root {
+  /* Core Brand Colors - Rubik's Cube Faces (Unchanged) */
+  --color-red: #ff3d3d;
+  --color-blue: #3d7eff;
+  --color-green: #3dff6e;
+  --color-yellow: #ffeb3d;
+  --color-orange: #ff913d;
+  --color-white: #ffffff;
+
+  /* Theme Colors - Gilded Obsidian Palette */
+  --theme-gold: #ffd700;
+  --theme-gold-dark: #b8860b;
+  --theme-amber: #f59e0b;
+  --theme-amber-dark: #d97706;
+  --theme-champagne: #fde68a;
+
+  /* Layout Colors */
+  --bg-primary: #050505;
+  --bg-secondary: #101010;
+  --bg-glass: rgba(20, 15, 5, 0.7); /* Slight gold/warm tint to glass */
+
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-accent: var(--theme-gold);
+
+  /* Gradients */
+  --gradient-main: linear-gradient(
+    135deg,
+    var(--theme-gold),
+    var(--theme-gold-dark)
+  );
+  --gradient-warm: linear-gradient(
+    135deg,
+    var(--theme-amber),
+    var(--theme-amber-dark)
+  );
+
+  /* Spacing & Layout */
+  --max-width: 1200px;
+  --nav-height: 80px;
+  --border-radius: 12px;
+
+  /* Fonts */
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Helvetica Neue, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Typography Utilities */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

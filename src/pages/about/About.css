@@ -1,0 +1,240 @@
+.about-page {
+  padding-top: calc(var(--nav-height) + 4rem);
+  padding-bottom: 6rem;
+  min-height: 100vh;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-lead {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.about-content {
+  padding: 4rem;
+  border-radius: 24px;
+  margin-bottom: 6rem;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-white);
+}
+
+.story-text p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Container for 3 cubes - Equidistant Layout */
+.cubes-animation-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly; /* Equal spacing */
+  align-items: center;
+  perspective: 1000px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.05),
+    transparent
+  );
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.cube-3d {
+  width: 80px;
+  height: 80px;
+  position: relative; /* Changed from absolute to flow naturally */
+  transform-style: preserve-3d;
+}
+
+/* Specific Animations (Positioning removed) */
+/* .cube-anim-1, .cube-anim-2, .cube-anim-3 only handle animation now */
+
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #000;
+  opacity: 0.95;
+  background-color: var(--theme-gold);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Grid Patterns */
+/* 2x2 Grid: 1 line vertical, 1 line horizontal */
+.cube-2x2 .face {
+  background-image: linear-gradient(#000 3px, transparent 3px),
+    linear-gradient(90deg, #000 3px, transparent 3px);
+  background-size: 50% 50%;
+}
+
+/* 3x3 Grid: 2 lines vertical, 2 lines horizontal */
+.cube-3x3 .face {
+  background-image: linear-gradient(#000 2px, transparent 2px),
+    linear-gradient(90deg, #000 2px, transparent 2px);
+  background-size: 33.33% 33.33%;
+}
+
+/* 4x4 Grid: 3 lines vertical, 3 lines horizontal */
+.cube-4x4 .face {
+  background-image: linear-gradient(#000 1.5px, transparent 1.5px),
+    linear-gradient(90deg, #000 1.5px, transparent 1.5px);
+  background-size: 25% 25%;
+}
+
+/* Specific Face Colors */
+.face.front {
+  transform: rotateY(0deg) translateZ(40px);
+  background-color: var(--color-green);
+}
+.face.back {
+  transform: rotateY(180deg) translateZ(40px);
+  background-color: var(--color-blue);
+}
+.face.right {
+  transform: rotateY(90deg) translateZ(40px);
+  background-color: var(--color-red);
+}
+.face.left {
+  transform: rotateY(-90deg) translateZ(40px);
+  background-color: var(--color-orange);
+}
+.face.top {
+  transform: rotateX(90deg) translateZ(40px);
+  background-color: var(--color-white);
+}
+.face.bottom {
+  transform: rotateX(-90deg) translateZ(40px);
+  background-color: var(--color-yellow);
+}
+
+/* Animations - Random Tumble */
+.cube-anim-1 {
+  animation: tumble1 12s linear infinite;
+}
+.cube-anim-2 {
+  animation: tumble2 15s linear infinite reverse;
+}
+.cube-anim-3 {
+  animation: tumble3 18s linear infinite;
+}
+
+@keyframes tumble1 {
+  0% {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+@keyframes tumble2 {
+  0% {
+    transform: rotate3d(1, -1, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, -1, 0, 360deg);
+  }
+}
+
+@keyframes tumble3 {
+  0% {
+    transform: rotate3d(0, 1, -1, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, -1, 360deg);
+  }
+}
+
+/* Mission Section */
+.mission-section {
+  text-align: center;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.mission-card {
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mission-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-main);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.mission-card:hover::before {
+  transform: scaleX(1);
+}
+
+.mission-icon {
+  color: var(--color-green);
+  margin-bottom: 1.5rem;
+}
+
+.mission-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mission-card p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-content {
+    padding: 2rem;
+  }
+
+  .cubes-animation-container {
+    height: 600px;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .cube-3d {
+    width: 82px;
+    height: 82px;
+  }
+}
