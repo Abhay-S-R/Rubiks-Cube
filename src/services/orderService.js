@@ -1,5 +1,5 @@
 const STORAGE_KEY = "rubiks_orders";
-const API_URL = "http://192.168.29.239:5000/api/orders";
+const API_URL = "http://localhost:5000/api/orders";
 
 export const saveOrder = async (orderData) => {
   try {
