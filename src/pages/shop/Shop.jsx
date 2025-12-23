@@ -4,7 +4,7 @@ import "./Shop.css";
 import { ShoppingCart, Zap, Star } from "lucide-react";
 import { allProducts } from "../../data/products";
 import { filterProductsByPrice, PRICE_RANGES } from "../../utils/filterUtils";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/cartContext";
 import Toast from "../../components/ui/Toast";
 
 const Shop = () => {

@@ -10,10 +10,9 @@ import {
   Loader2,
   AlertCircle,
 } from "lucide-react";
-import { useCart } from "../../context/CartContext";
+import { useCart } from "../../context/cartContext";
 import { parsePrice } from "../../utils/filterUtils";
 import { saveOrder } from "../../services/orderService";
-
 import { useNavigate } from "react-router-dom";
 
 const Payment = () => {
