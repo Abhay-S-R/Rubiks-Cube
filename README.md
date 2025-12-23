@@ -1,4 +1,4 @@
-# Rubik's Cube Shop 🧩
+# Cubix: A Modern Rubik’s Cube E‑commerce 🧩
 
 A modern, responsive e-commerce web application for selling high-performance puzzles. Built with React.js and Vite, featuring a complete shopping experience from product browsing to checkout.
 
@@ -16,11 +16,10 @@ A modern, responsive e-commerce web application for selling high-performance puz
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 19, Vite, React Router v7
-- **Styling**: CSS3 (Variables, Flexbox/Grid, Responsive Media Queries)
+- **Frontend**: React 19, Vite
+- **Styling**: CSS3
 - **Icons**: Lucide React
-- **Backend**: Node.js, Express.js (for API handling)
-- **State Management**: React Context API
+- **Backend**: Node.js, Express.js
 
 ## 🚀 Getting Started
 
